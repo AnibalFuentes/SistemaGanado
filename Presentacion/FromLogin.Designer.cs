@@ -31,8 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.usuario = new System.Windows.Forms.TextBox();
-            this.contraseña = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -64,40 +64,43 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Contraseña:";
             // 
-            // usuario
+            // txtUsuario
             // 
-            this.usuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.usuario.Location = new System.Drawing.Point(70, 99);
-            this.usuario.Name = "usuario";
-            this.usuario.Size = new System.Drawing.Size(200, 26);
-            this.usuario.TabIndex = 3;
+            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUsuario.Location = new System.Drawing.Point(70, 99);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(200, 26);
+            this.txtUsuario.TabIndex = 3;
             // 
-            // contraseña
+            // txtContraseña
             // 
-            this.contraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.contraseña.Location = new System.Drawing.Point(70, 154);
-            this.contraseña.Name = "contraseña";
-            this.contraseña.Size = new System.Drawing.Size(200, 26);
-            this.contraseña.TabIndex = 4;
-            this.contraseña.UseSystemPasswordChar = true;
+            this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtContraseña.Location = new System.Drawing.Point(70, 154);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Size = new System.Drawing.Size(200, 26);
+            this.txtContraseña.TabIndex = 4;
+            this.txtContraseña.UseSystemPasswordChar = true;
             // 
             // btnIngresar
             // 
+            this.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresar.Location = new System.Drawing.Point(70, 199);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(200, 30);
             this.btnIngresar.TabIndex = 5;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // FromLogin
             // 
+            this.AcceptButton = this.btnIngresar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 261);
             this.Controls.Add(this.btnIngresar);
-            this.Controls.Add(this.contraseña);
-            this.Controls.Add(this.usuario);
+            this.Controls.Add(this.txtContraseña);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -109,6 +112,7 @@
             this.Name = "FromLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar sesión";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FromLogin_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,8 +123,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox usuario;
-        private System.Windows.Forms.TextBox contraseña;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Button btnIngresar;
     }
 }
