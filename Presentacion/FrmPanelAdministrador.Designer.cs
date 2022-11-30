@@ -47,11 +47,6 @@
             this.txtReferencia = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.GrillaGanados = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnIngresar = new System.Windows.Forms.Button();
-            this.txtIdGanado = new System.Windows.Forms.TextBox();
-            this.txtIndice = new System.Windows.Forms.TextBox();
             this.Borrar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdGanado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Referencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +60,11 @@
             this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnIngresar = new System.Windows.Forms.Button();
+            this.txtIdGanado = new System.Windows.Forms.TextBox();
+            this.txtIndice = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaGanados)).BeginInit();
             this.SuspendLayout();
@@ -171,6 +171,7 @@
             this.txtMesesRecup.Name = "txtMesesRecup";
             this.txtMesesRecup.Size = new System.Drawing.Size(200, 26);
             this.txtMesesRecup.TabIndex = 16;
+            this.txtMesesRecup.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMesesRecup_KeyPress);
             // 
             // label6
             // 
@@ -202,6 +203,7 @@
             // 
             // boxSexo
             // 
+            this.boxSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.boxSexo.FormattingEnabled = true;
             this.boxSexo.Location = new System.Drawing.Point(29, 193);
             this.boxSexo.Name = "boxSexo";
@@ -210,6 +212,7 @@
             // 
             // boxRaza
             // 
+            this.boxRaza.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.boxRaza.FormattingEnabled = true;
             this.boxRaza.Location = new System.Drawing.Point(29, 133);
             this.boxRaza.Name = "boxRaza";
@@ -301,78 +304,6 @@
             this.GrillaGanados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaGanados_CellClick);
             this.GrillaGanados.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GrillaGanados_CellPainting);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::Presentacion.Properties.Resources.dinero;
-            this.button1.Location = new System.Drawing.Point(15, 604);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.button1.Size = new System.Drawing.Size(116, 38);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Calcular";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(15, 555);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(32, 30);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "\r\n";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // btnIngresar
-            // 
-            this.btnIngresar.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIngresar.FlatAppearance.BorderSize = 0;
-            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.ForeColor = System.Drawing.Color.White;
-            this.btnIngresar.Image = global::Presentacion.Properties.Resources.agregar;
-            this.btnIngresar.Location = new System.Drawing.Point(151, 604);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.btnIngresar.Size = new System.Drawing.Size(111, 38);
-            this.btnIngresar.TabIndex = 6;
-            this.btnIngresar.Text = "Agregar";
-            this.btnIngresar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnIngresar.UseVisualStyleBackColor = false;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
-            // 
-            // txtIdGanado
-            // 
-            this.txtIdGanado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdGanado.Location = new System.Drawing.Point(237, 555);
-            this.txtIdGanado.Name = "txtIdGanado";
-            this.txtIdGanado.Size = new System.Drawing.Size(25, 26);
-            this.txtIdGanado.TabIndex = 23;
-            this.txtIdGanado.Text = "0";
-            this.txtIdGanado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtIdGanado.Visible = false;
-            // 
-            // txtIndice
-            // 
-            this.txtIndice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIndice.Location = new System.Drawing.Point(206, 555);
-            this.txtIndice.Name = "txtIndice";
-            this.txtIndice.Size = new System.Drawing.Size(25, 26);
-            this.txtIndice.TabIndex = 25;
-            this.txtIndice.Text = "-1";
-            this.txtIndice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtIndice.Visible = false;
-            // 
             // Borrar
             // 
             this.Borrar.HeaderText = "";
@@ -456,6 +387,78 @@
             this.EstadoValor.Name = "EstadoValor";
             this.EstadoValor.ReadOnly = true;
             this.EstadoValor.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = global::Presentacion.Properties.Resources.dinero;
+            this.button1.Location = new System.Drawing.Point(15, 604);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.button1.Size = new System.Drawing.Size(116, 38);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Calcular";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(15, 555);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(32, 30);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "\r\n";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // btnIngresar
+            // 
+            this.btnIngresar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIngresar.FlatAppearance.BorderSize = 0;
+            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresar.ForeColor = System.Drawing.Color.White;
+            this.btnIngresar.Image = global::Presentacion.Properties.Resources.agregar;
+            this.btnIngresar.Location = new System.Drawing.Point(151, 604);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.btnIngresar.Size = new System.Drawing.Size(111, 38);
+            this.btnIngresar.TabIndex = 6;
+            this.btnIngresar.Text = "Agregar";
+            this.btnIngresar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnIngresar.UseVisualStyleBackColor = false;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            // 
+            // txtIdGanado
+            // 
+            this.txtIdGanado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdGanado.Location = new System.Drawing.Point(237, 555);
+            this.txtIdGanado.Name = "txtIdGanado";
+            this.txtIdGanado.Size = new System.Drawing.Size(25, 26);
+            this.txtIdGanado.TabIndex = 23;
+            this.txtIdGanado.Text = "0";
+            this.txtIdGanado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtIdGanado.Visible = false;
+            // 
+            // txtIndice
+            // 
+            this.txtIndice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIndice.Location = new System.Drawing.Point(206, 555);
+            this.txtIndice.Name = "txtIndice";
+            this.txtIndice.Size = new System.Drawing.Size(25, 26);
+            this.txtIndice.TabIndex = 25;
+            this.txtIndice.Text = "-1";
+            this.txtIndice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtIndice.Visible = false;
             // 
             // FrmPanelAdministrador
             // 

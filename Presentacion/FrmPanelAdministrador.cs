@@ -35,13 +35,13 @@ namespace Presentacion
             boxSexo.SelectedIndex = 0;
 
             N_Ganado negocioGanado = new N_Ganado();
-            List<Ganado> GrillaGanadoss = negocioGanado.Listar();
+            List<Ganado> ganados = negocioGanado.Listar();
 
             //Llenar tabla
-            foreach (var g in GrillaGanadoss)
+            foreach (var g in ganados)
             {
-                GrillaGanados.Rows.Add(new object[] {"",g.IdGanado,g.Referencia,g.Raza,
-                g.Sexo,g.Peso,g.MesesRecuperacion, g.PrecioVenta, g.PrecioCompra, g.PesoVenta,
+                this.GrillaGanados.Rows.Add(new object[] {"", g.IdGanado, g.Referencia, g.Raza,
+                g.Sexo, g.Peso, g.MesesRecuperacion, g.PrecioVenta, g.PrecioCompra, g.PesoVenta,
                     g.FechaRegistro, g.Estado == true ? "Disponible" : "Vendido", g.Estado == true ? 1 : 0 });
             }
         }
@@ -54,12 +54,16 @@ namespace Presentacion
             {
                 IdGanado = Convert.ToInt32(txtIdGanado.Text),
                 Referencia = txtReferencia.Text,
-                Raza = boxRaza.SelectedItem.ToString(),
+                Raza = boxRaza.Text,
                 Sexo = boxSexo.Text,
-                Peso = Convert.ToDecimal(txtPeso.Text),
                 MesesRecuperacion = Convert.ToInt32(txtMesesRecup.Text),
+                Peso = Convert.ToDecimal(txtPeso.Text),
                 Estado = true
             };
+
+            ganado.CalcularPesoVenta();
+            ganado.CalcularPrecioCompra();
+            ganado.CalcularPrecioVenta();
 
             if (ganado.IdGanado == 0)
             {
@@ -76,17 +80,17 @@ namespace Presentacion
                     if (IdGanadoGenerado != 0)
                     {
                         string estado = "";
-                        if (ganado.Estado) { estado = "Disponible"; } else { estado = "Vendido"; } 
+                        if (ganado.Estado) { estado = "Disponible"; } else { estado = "Vendido"; }
 
                         GrillaGanados.Rows.Add(new object[]
                         {
                             "",
                             IdGanadoGenerado,
                             txtReferencia.Text,
-                            boxRaza.SelectedItem.ToString(),
-                            boxSexo.SelectedItem.ToString(),
-                            txtPeso.Text,
-                            txtMesesRecup.Text,
+                            ganado.Raza,
+                            ganado.Sexo,
+                            ganado.Peso,
+                            ganado.MesesRecuperacion,
                             ganado.PrecioVenta,
                             ganado.PrecioCompra,
                             ganado.PesoVenta,
@@ -219,6 +223,14 @@ namespace Presentacion
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             RegistrarGanado();
+        }
+
+        private void txtMesesRecup_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
