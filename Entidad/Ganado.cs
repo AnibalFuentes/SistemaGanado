@@ -41,20 +41,21 @@
         }
         public decimal CalcularPrecioVenta()
         {
+            decimal PesoN;
             decimal ValorKgGordo;
             if (Sexo == "Macho")
             {
                 ValorKgGordo = 8000;
-                Peso = Peso + (MesesRecuperacion * 20);
-                PrecioVenta = (Peso * ValorKgGordo) - (MesesRecuperacion * 100000);
+                 PesoN = Peso + (MesesRecuperacion * 20);
+                PrecioVenta = (PesoN * ValorKgGordo) - (MesesRecuperacion * 100000);
             }
             else
             {
                 if (Sexo == "Hembra")
                 {
                     ValorKgGordo = 7000;
-                    Peso = Peso + (MesesRecuperacion * 20);
-                    PrecioVenta = (Peso * ValorKgGordo) - (MesesRecuperacion * 100000);
+                    PesoN = Peso + (MesesRecuperacion * 20);
+                    PrecioVenta = (PesoN * ValorKgGordo) - (MesesRecuperacion * 100000);
                 }
             }
             return PrecioVenta;

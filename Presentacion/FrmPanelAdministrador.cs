@@ -91,9 +91,9 @@ namespace Presentacion
                             ganado.Sexo,
                             ganado.Peso,
                             ganado.MesesRecuperacion,
-                            ganado.PrecioVenta,
-                            ganado.PrecioCompra,
                             ganado.PesoVenta,
+                            ganado.PrecioCompra,
+                            ganado.PrecioVenta,
                             Estado,
                             estado,
                         });
