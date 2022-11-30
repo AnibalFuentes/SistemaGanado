@@ -29,11 +29,11 @@ namespace Presentacion
                     {
                         total += Convert.ToDecimal(row.Cells["PrecioVenta"].Value.ToString());
                     }
-                    ganancias.Text = "$" + total.ToString("0.00");
+                    lblGanancias.Text = "$" + total.ToString("0.00");
                 }
                 else
                 {
-                    ganancias.Text = "$0";
+                    lblGanancias.Text = "$0";
                 }
             }
             catch (Exception ex)

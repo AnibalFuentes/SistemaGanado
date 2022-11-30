@@ -69,14 +69,14 @@
             this.label10 = new System.Windows.Forms.Label();
             this.Estadisticas = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.estad = new System.Windows.Forms.TabPage();
             this.label11 = new System.Windows.Forms.Label();
-            this.ganancias = new System.Windows.Forms.Label();
+            this.lblGanancias = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaGanados)).BeginInit();
             this.Estadisticas.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.estad.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -495,7 +495,7 @@
             // Estadisticas
             // 
             this.Estadisticas.Controls.Add(this.tabPage1);
-            this.Estadisticas.Controls.Add(this.tabPage2);
+            this.Estadisticas.Controls.Add(this.estad);
             this.Estadisticas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Estadisticas.Location = new System.Drawing.Point(0, 0);
             this.Estadisticas.Name = "Estadisticas";
@@ -523,17 +523,17 @@
             this.tabPage1.Text = "Registros";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // estad
             // 
-            this.tabPage2.Controls.Add(this.ganancias);
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Location = new System.Drawing.Point(4, 27);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(976, 623);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Estadisticas";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.estad.Controls.Add(this.lblGanancias);
+            this.estad.Controls.Add(this.label11);
+            this.estad.Location = new System.Drawing.Point(4, 27);
+            this.estad.Name = "estad";
+            this.estad.Padding = new System.Windows.Forms.Padding(3);
+            this.estad.Size = new System.Drawing.Size(976, 623);
+            this.estad.TabIndex = 1;
+            this.estad.Text = "Estadisticas";
+            this.estad.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -545,15 +545,14 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Ganancias:";
             // 
-            // ganancias
+            // lblGanancias
             // 
-            this.ganancias.AutoSize = true;
-            this.ganancias.Font = new System.Drawing.Font("Arial", 20F);
-            this.ganancias.Location = new System.Drawing.Point(17, 49);
-            this.ganancias.Name = "ganancias";
-            this.ganancias.Size = new System.Drawing.Size(59, 32);
-            this.ganancias.TabIndex = 1;
-            this.ganancias.Text = "-----";
+            this.lblGanancias.AutoSize = true;
+            this.lblGanancias.Location = new System.Drawing.Point(20, 49);
+            this.lblGanancias.Name = "lblGanancias";
+            this.lblGanancias.Size = new System.Drawing.Size(59, 18);
+            this.lblGanancias.TabIndex = 1;
+            this.lblGanancias.Text = "label12";
             // 
             // FrmPanelAdministrador
             // 
@@ -576,8 +575,8 @@
             this.Estadisticas.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.estad.ResumeLayout(false);
+            this.estad.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -625,8 +624,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TabControl Estadisticas;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label ganancias;
+        private System.Windows.Forms.TabPage estad;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblGanancias;
     }
 }

@@ -42,6 +42,7 @@ namespace Presentacion
 
         private void CalcularTotal()
         {
+
             try
             {
                 decimal total = 0;
@@ -52,6 +53,7 @@ namespace Presentacion
                     {
                         total += Convert.ToDecimal(row.Cells["PrecioVenta"].Value.ToString());
                     }
+
                     lblTotalPagar.Text = "$" + total.ToString("0.00");
                 }
                 else
@@ -126,7 +128,6 @@ namespace Presentacion
                         ganadoImpl.Editar(item, out string mensaje);
                         MessageBox.Show("Ganado comprado exitosamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         DatosCarrito.Controls.Clear();
-                        MessageBox.Show(mensaje);
                         break;
                     }
                 }
