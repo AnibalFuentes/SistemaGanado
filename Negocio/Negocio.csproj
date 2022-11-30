@@ -42,7 +42,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="N_Ganado.cs" />
+    <Compile Include="N_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{ddfcff57-ff55-4c3f-99c5-3b6fb5cd1416}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidad\Entidad.csproj">
+      <Project>{c2b6404d-5f50-4625-8e2e-284873d12f6e}</Project>
+      <Name>Entidad</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
