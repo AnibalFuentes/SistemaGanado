@@ -106,14 +106,7 @@ namespace Datos
                 {
                     SqlCommand cmd = new SqlCommand("EditarGanado", connection);
                     cmd.Parameters.AddWithValue("@IdGanado", Ganado.IdGanado);
-                    cmd.Parameters.AddWithValue("@Referencia", Ganado.Referencia);
-                    cmd.Parameters.AddWithValue("@Raza", Ganado.Raza);
-                    cmd.Parameters.AddWithValue("@Sexo", Ganado.Sexo);
-                    cmd.Parameters.AddWithValue("@Peso", Ganado.Peso);
-                    cmd.Parameters.AddWithValue("@PesoVenta", Ganado.PesoVenta);
-                    cmd.Parameters.AddWithValue("@MesesRecuperacion", Ganado.MesesRecuperacion);
-                    cmd.Parameters.AddWithValue("@PrecioCompra", Ganado.PrecioCompra);
-                    cmd.Parameters.AddWithValue("@PrecioVenta", Ganado.PrecioVenta);
+                    cmd.Parameters.AddWithValue("@Referencia", Ganado.IdGanado);
                     cmd.Parameters.AddWithValue("@Estado", Ganado.Estado);
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;

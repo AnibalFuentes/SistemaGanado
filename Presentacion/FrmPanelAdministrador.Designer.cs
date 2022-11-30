@@ -65,8 +65,18 @@
             this.btnIngresar = new System.Windows.Forms.Button();
             this.txtIdGanado = new System.Windows.Forms.TextBox();
             this.txtIndice = new System.Windows.Forms.TextBox();
+            this.txtConsultar = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Estadisticas = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.ganancias = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaGanados)).BeginInit();
+            this.Estadisticas.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -90,7 +100,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtReferencia);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(15, 13);
+            this.panel1.Location = new System.Drawing.Point(9, 10);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(247, 536);
             this.panel1.TabIndex = 3;
@@ -275,6 +285,7 @@
             this.GrillaGanados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GrillaGanados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GrillaGanados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.GrillaGanados.BackgroundColor = System.Drawing.Color.Silver;
             this.GrillaGanados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -293,13 +304,13 @@
             this.FechaRegistro,
             this.Estado,
             this.EstadoValor});
-            this.GrillaGanados.Location = new System.Drawing.Point(274, 13);
+            this.GrillaGanados.Location = new System.Drawing.Point(281, 42);
             this.GrillaGanados.Name = "GrillaGanados";
             this.GrillaGanados.ReadOnly = true;
             this.GrillaGanados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.GrillaGanados.RowHeadersWidth = 25;
             this.GrillaGanados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrillaGanados.Size = new System.Drawing.Size(696, 629);
+            this.GrillaGanados.Size = new System.Drawing.Size(686, 539);
             this.GrillaGanados.TabIndex = 2;
             this.GrillaGanados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaGanados_CellClick);
             this.GrillaGanados.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GrillaGanados_CellPainting);
@@ -309,7 +320,6 @@
             this.Borrar.HeaderText = "";
             this.Borrar.Name = "Borrar";
             this.Borrar.ReadOnly = true;
-            this.Borrar.Width = 25;
             // 
             // IdGanado
             // 
@@ -323,7 +333,6 @@
             this.Referencia.HeaderText = "REFERENCIA";
             this.Referencia.Name = "Referencia";
             this.Referencia.ReadOnly = true;
-            this.Referencia.Width = 130;
             // 
             // Raza
             // 
@@ -348,7 +357,6 @@
             this.MesesRecuperacion.HeaderText = "M. RECUP.";
             this.MesesRecuperacion.Name = "MesesRecuperacion";
             this.MesesRecuperacion.ReadOnly = true;
-            this.MesesRecuperacion.Width = 120;
             // 
             // PesoVenta
             // 
@@ -394,30 +402,33 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = global::Presentacion.Properties.Resources.dinero;
-            this.button1.Location = new System.Drawing.Point(15, 604);
+            this.button1.Location = new System.Drawing.Point(51, 552);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.button1.Size = new System.Drawing.Size(116, 38);
+            this.button1.Size = new System.Drawing.Size(100, 38);
             this.button1.TabIndex = 23;
             this.button1.Text = "Calcular";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(15, 555);
+            this.button2.Image = global::Presentacion.Properties.Resources.recargar;
+            this.button2.Location = new System.Drawing.Point(9, 552);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(32, 30);
+            this.button2.Size = new System.Drawing.Size(36, 38);
             this.button2.TabIndex = 24;
             this.button2.Text = "\r\n";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnIngresar
             // 
@@ -425,13 +436,13 @@
             this.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIngresar.FlatAppearance.BorderSize = 0;
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresar.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btnIngresar.ForeColor = System.Drawing.Color.White;
             this.btnIngresar.Image = global::Presentacion.Properties.Resources.agregar;
-            this.btnIngresar.Location = new System.Drawing.Point(151, 604);
+            this.btnIngresar.Location = new System.Drawing.Point(157, 552);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.btnIngresar.Size = new System.Drawing.Size(111, 38);
+            this.btnIngresar.Size = new System.Drawing.Size(99, 38);
             this.btnIngresar.TabIndex = 6;
             this.btnIngresar.Text = "Agregar";
             this.btnIngresar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -441,7 +452,7 @@
             // txtIdGanado
             // 
             this.txtIdGanado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdGanado.Location = new System.Drawing.Point(237, 555);
+            this.txtIdGanado.Location = new System.Drawing.Point(939, 576);
             this.txtIdGanado.Name = "txtIdGanado";
             this.txtIdGanado.Size = new System.Drawing.Size(25, 26);
             this.txtIdGanado.TabIndex = 23;
@@ -452,7 +463,7 @@
             // txtIndice
             // 
             this.txtIndice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIndice.Location = new System.Drawing.Point(206, 555);
+            this.txtIndice.Location = new System.Drawing.Point(908, 576);
             this.txtIndice.Name = "txtIndice";
             this.txtIndice.Size = new System.Drawing.Size(25, 26);
             this.txtIndice.TabIndex = 25;
@@ -460,31 +471,114 @@
             this.txtIndice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtIndice.Visible = false;
             // 
+            // txtConsultar
+            // 
+            this.txtConsultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtConsultar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtConsultar.Location = new System.Drawing.Point(767, 10);
+            this.txtConsultar.Name = "txtConsultar";
+            this.txtConsultar.Size = new System.Drawing.Size(200, 26);
+            this.txtConsultar.TabIndex = 23;
+            this.txtConsultar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.label10.Location = new System.Drawing.Point(683, 14);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(78, 18);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "Consultar:";
+            // 
+            // Estadisticas
+            // 
+            this.Estadisticas.Controls.Add(this.tabPage1);
+            this.Estadisticas.Controls.Add(this.tabPage2);
+            this.Estadisticas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Estadisticas.Location = new System.Drawing.Point(0, 0);
+            this.Estadisticas.Name = "Estadisticas";
+            this.Estadisticas.SelectedIndex = 0;
+            this.Estadisticas.Size = new System.Drawing.Size(984, 654);
+            this.Estadisticas.TabIndex = 26;
+            this.Estadisticas.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.txtIndice);
+            this.tabPage1.Controls.Add(this.label10);
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.GrillaGanados);
+            this.tabPage1.Controls.Add(this.btnIngresar);
+            this.tabPage1.Controls.Add(this.txtConsultar);
+            this.tabPage1.Controls.Add(this.txtIdGanado);
+            this.tabPage1.Location = new System.Drawing.Point(4, 27);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(976, 623);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Registros";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.ganancias);
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Location = new System.Drawing.Point(4, 27);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(976, 623);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Estadisticas";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 20F);
+            this.label11.Location = new System.Drawing.Point(17, 17);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(152, 32);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Ganancias:";
+            // 
+            // ganancias
+            // 
+            this.ganancias.AutoSize = true;
+            this.ganancias.Font = new System.Drawing.Font("Arial", 20F);
+            this.ganancias.Location = new System.Drawing.Point(17, 49);
+            this.ganancias.Name = "ganancias";
+            this.ganancias.Size = new System.Drawing.Size(59, 32);
+            this.ganancias.TabIndex = 1;
+            this.ganancias.Text = "-----";
+            // 
             // FrmPanelAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 654);
-            this.Controls.Add(this.txtIndice);
-            this.Controls.Add(this.txtIdGanado);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.GrillaGanados);
-            this.Controls.Add(this.btnIngresar);
+            this.Controls.Add(this.Estadisticas);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmPanelAdministrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel administrativo";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPanelAdministrador_FormClosing);
             this.Load += new System.EventHandler(this.FrmPanelAdministrador_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaGanados)).EndInit();
+            this.Estadisticas.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -527,5 +621,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoValor;
+        private System.Windows.Forms.TextBox txtConsultar;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TabControl Estadisticas;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label ganancias;
+        private System.Windows.Forms.Label label11;
     }
 }

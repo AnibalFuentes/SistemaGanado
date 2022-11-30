@@ -15,8 +15,37 @@ namespace Presentacion
             InitializeComponent();
         }
 
+        Ganado ganado = new Ganado();
+
+        private void Calcular()
+        {
+            try
+            {
+                decimal total = 0;
+
+                if (GrillaGanados.Rows.Count > 0)
+                {
+                    foreach (DataGridViewRow row in GrillaGanados.Rows)
+                    {
+                        total += Convert.ToDecimal(row.Cells["PrecioVenta"].Value.ToString());
+                    }
+                    ganancias.Text = "$" + total.ToString("0.00");
+                }
+                else
+                {
+                    ganancias.Text = "$0";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         public void LLenarDatos()
         {
+            Calcular();
+
             txtIdGanado.Text = "0";
             txtIndice.Text = "-1";
 
@@ -50,7 +79,7 @@ namespace Presentacion
         {
             string mensaje = string.Empty;
 
-            Ganado ganado = new Ganado()
+            ganado = new Ganado()
             {
                 IdGanado = Convert.ToInt32(txtIdGanado.Text),
                 Referencia = txtReferencia.Text,
@@ -124,7 +153,7 @@ namespace Presentacion
         private void FrmPanelAdministrador_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult dialogo = MessageBox.Show("¿Desea cerrar el programa?",
-"Cerrar el programa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            "Cerrar el programa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogo == DialogResult.No) { e.Cancel = true; }
             else
             {
@@ -231,6 +260,72 @@ namespace Presentacion
             {
                 e.Handled = true;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ganado.IdGanado = Convert.ToInt32(txtIdGanado.Text);
+                ganado.Referencia = txtReferencia.Text;
+                ganado.Raza = boxRaza.Text;
+                ganado.Sexo = boxSexo.Text;
+                ganado.MesesRecuperacion = Convert.ToInt32(txtMesesRecup.Text);
+                ganado.Peso = Convert.ToDecimal(txtPeso.Text);
+                ganado.Estado = true;
+
+                txtPrecioCompra.Text = ganado.CalcularPrecioCompra().ToString();
+                txtPrecioVenta.Text = ganado.CalcularPrecioVenta().ToString();
+                txtPesoVenta.Text = ganado.CalcularPesoVenta().ToString();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (txtConsultar.Text != "")
+            {
+                //Tabla
+                GrillaGanados.CurrentCell = null;
+
+                foreach (DataGridViewRow row in GrillaGanados.Rows) { row.Visible = false; }
+
+                foreach (DataGridViewRow row in GrillaGanados.Rows)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        if ((cell.Value.ToString().ToUpperInvariant().IndexOf(txtConsultar.Text.ToUpperInvariant()) == 0))
+                        {
+                            row.Visible = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                foreach (DataGridViewRow row in GrillaGanados.Rows)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        row.Visible = true;
+                    }
+                }
+            }
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

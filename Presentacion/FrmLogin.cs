@@ -51,7 +51,7 @@ namespace Presentacion
                             if (usuario.TipoUsuario == "Cliente")
                             {
                                 this.Hide();
-                                FrmPanelCompra panelCliente = new FrmPanelCompra();
+                                FrmPanelCompra panelCliente = new FrmPanelCompra(usuario);
                                 panelCliente.Show();
                             }
                         }
