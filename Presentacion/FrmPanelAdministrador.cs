@@ -1,11 +1,9 @@
-﻿using System;
+﻿using Entidad;
+using Negocio;
+using Presentacion.Properties;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion
@@ -16,5 +14,212 @@ namespace Presentacion
         {
             InitializeComponent();
         }
+
+        public void LLenarDatos()
+        {
+            txtIdGanado.Text = "0";
+            txtIndice.Text = "-1";
+
+            boxRaza.Items.Add(new OpcionComboBox() { valor = 1, texto = "Brahaman Rojo" });
+            boxRaza.Items.Add(new OpcionComboBox() { valor = 2, texto = "Brahaman Blanco" });
+            boxRaza.Items.Add(new OpcionComboBox() { valor = 3, texto = "Gyr" });
+            boxRaza.Items.Add(new OpcionComboBox() { valor = 4, texto = "Guzera" });
+            boxRaza.DisplayMember = "Texto";
+            boxRaza.ValueMember = "valor";
+            boxRaza.SelectedIndex = 0;
+
+            boxSexo.Items.Add(new OpcionComboBox() { valor = 1, texto = "Macho" });
+            boxSexo.Items.Add(new OpcionComboBox() { valor = 2, texto = "Hembra" });
+            boxSexo.DisplayMember = "Texto";
+            boxSexo.ValueMember = "valor";
+            boxSexo.SelectedIndex = 0;
+
+            N_Ganado negocioGanado = new N_Ganado();
+            List<Ganado> GrillaGanadoss = negocioGanado.Listar();
+
+            //Llenar tabla
+            foreach (var g in GrillaGanadoss)
+            {
+                GrillaGanados.Rows.Add(new object[] {"",g.IdGanado,g.Referencia,g.Raza,
+                g.Sexo,g.Peso,g.MesesRecuperacion, g.PrecioVenta, g.PrecioCompra, g.PesoVenta,
+                    g.FechaRegistro, g.Estado == true ? "Disponible" : "Vendido", g.Estado == true ? 1 : 0 });
+            }
+        }
+
+        private void RegistrarGanado()
+        {
+            string mensaje = string.Empty;
+
+            Ganado ganado = new Ganado()
+            {
+                IdGanado = Convert.ToInt32(txtIdGanado.Text),
+                Referencia = txtReferencia.Text,
+                Raza = boxRaza.SelectedItem.ToString(),
+                Sexo = boxSexo.Text,
+                Peso = Convert.ToDecimal(txtPeso.Text),
+                MesesRecuperacion = Convert.ToInt32(txtMesesRecup.Text),
+                Estado = true
+            };
+
+            if (ganado.IdGanado == 0)
+            {
+
+                DialogResult dialogo = MessageBox.Show("¿Desea agregar este nuevo Ganado?",
+                "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogo == DialogResult.No) { }
+                else
+                {
+                    //Registrar
+                    N_Ganado n_Ganado = new N_Ganado();
+                    int IdGanadoGenerado = n_Ganado.Registrar(ganado, out mensaje);
+
+                    if (IdGanadoGenerado != 0)
+                    {
+                        string estado = "";
+                        if (ganado.Estado) { estado = "Disponible"; } else { estado = "Vendido"; } 
+
+                        GrillaGanados.Rows.Add(new object[]
+                        {
+                            "",
+                            IdGanadoGenerado,
+                            txtReferencia.Text,
+                            boxRaza.SelectedItem.ToString(),
+                            boxSexo.SelectedItem.ToString(),
+                            txtPeso.Text,
+                            txtMesesRecup.Text,
+                            ganado.PrecioVenta,
+                            ganado.PrecioCompra,
+                            ganado.PesoVenta,
+                            Estado,
+                            estado,
+                        });
+
+                        Limpiar();
+                        MessageBox.Show("Ganado agregado exitosamente.", "Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void Limpiar()
+        {
+            txtReferencia.Text = "";
+            boxRaza.Text = "";
+            boxSexo.Text = "";
+            txtPeso.Text = "";
+            txtPrecioCompra.Text = "";
+            txtMesesRecup.Text = "";
+            txtPesoVenta.Text = "";
+            txtPrecioVenta.Text = "";
+        }
+
+        private void FrmPanelAdministrador_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialogo = MessageBox.Show("¿Desea cerrar el programa?",
+"Cerrar el programa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogo == DialogResult.No) { e.Cancel = true; }
+            else
+            {
+                e.Cancel = false; Environment.Exit(1);
+            }
+        }
+
+        private void FrmPanelAdministrador_Load(object sender, EventArgs e)
+        {
+            LLenarDatos();
+        }
+
+        private void GrillaGanados_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex < 0)
+                    return;
+                if (e.ColumnIndex == 0)
+                {
+                    e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                    var w = Resources.borrar.Width;
+                    var h = Resources.borrar.Height;
+                    var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                    var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+                    e.Graphics.DrawImage(Resources.borrar, new Rectangle(x, y, w, h));
+                    e.Handled = true;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void GrillaGanados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (GrillaGanados.Columns[e.ColumnIndex].Name == "Borrar")
+                {
+
+                    int indice = e.RowIndex;
+
+                    if (indice >= 0)
+                    {
+                        if (e.RowIndex < 0)
+                            return;
+                        if (e.ColumnIndex == 0)
+                        {
+                            txtIndice.Text = indice.ToString();
+                            txtIdGanado.Text = GrillaGanados.Rows[indice].Cells["IdGanado"].Value.ToString();
+
+                            if (Convert.ToInt32(txtIdGanado.Text) != 0)
+                            {
+                                string mensaje = string.Empty;
+
+                                DialogResult dialogo = MessageBox.Show("¿Desea eliminar este ganado?",
+                                    "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (dialogo == DialogResult.No) { }
+                                else
+                                {
+                                    Ganado gn = new Ganado()
+                                    {
+                                        IdGanado = Convert.ToInt32(txtIdGanado.Text)
+                                    };
+
+                                    bool respuesta = new N_Ganado().Eliminar(gn, out mensaje);
+
+                                    if (respuesta)
+                                    {
+                                        GrillaGanados.Rows.RemoveAt(Convert.ToInt32(txtIndice.Text));
+
+                                        txtIdGanado.Text = "0";
+                                        txtIndice.Text = "-1";
+
+                                        MessageBox.Show("Ganado eliminado exitosamente.", "Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            RegistrarGanado();
+        }
     }
 }
+

@@ -13,7 +13,7 @@ namespace Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FromLogin());
+            Application.Run(new FrmLogin());
         }
     }
 }

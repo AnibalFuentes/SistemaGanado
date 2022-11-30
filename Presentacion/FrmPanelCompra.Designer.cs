@@ -1,6 +1,6 @@
 ﻿namespace Presentacion
 {
-    partial class FrmPanelClientes
+    partial class FrmPanelCompra
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // FrmPanelClientes
+            // FrmPanelCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 561);
             this.Font = new System.Drawing.Font("Arial", 12F);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmPanelClientes";
+            this.Name = "FrmPanelCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel de compras";
             this.ResumeLayout(false);

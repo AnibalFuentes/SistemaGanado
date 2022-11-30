@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class FromLogin : Form
+    public partial class FrmLogin : Form
     {
-        public FromLogin()
+        public FrmLogin()
         {
             InitializeComponent();
         }
@@ -51,7 +51,7 @@ namespace Presentacion
                             if (usuario.TipoUsuario == "Cliente")
                             {
                                 this.Hide();
-                                FrmPanelClientes panelCliente = new FrmPanelClientes();
+                                FrmPanelCompra panelCliente = new FrmPanelCompra();
                                 panelCliente.Show();
                             }
                         }
