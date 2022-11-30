@@ -10,6 +10,7 @@ namespace Presentacion
     {
         private static Usuario usuarioActual;
         Ganado ganado = new Ganado();
+        public static string Ganancias = "";
 
         public FrmPanelCompra(Usuario usuario)
         {
@@ -22,7 +23,6 @@ namespace Presentacion
             TxNomCliente.Text = usuarioActual.NombreCompleto.ToString();
             TxNombreUsuario.Text = usuarioActual.NombreUsuario.ToString();
             TxDocumentoCliente.Text = usuarioActual.Documento.ToString();
-
             LLenarDatos();
         }
 
@@ -36,6 +36,10 @@ namespace Presentacion
                 if (item.Estado == true)
                 {
                     DatosGanados.Rows.Add(new object[] { item.Referencia, item.Sexo, item.Raza, item.Peso, item.PrecioVenta });
+                }
+                if(item.Estado == false)
+                {
+                    Ganancias = lblTotalPagar.Text;
                 }
             }
         }

@@ -23,18 +23,16 @@ namespace Presentacion
             {
                 decimal total = 0;
 
-                if (GrillaGanados.Rows.Count > 0)
-                {
-                    foreach (DataGridViewRow row in GrillaGanados.Rows)
+                foreach (DataGridViewRow row in GrillaGanados.Rows)
+                {                   
+                    if (Convert.ToBoolean(row.Cells["EstadoValor"].Value) == false)
                     {
                         total += Convert.ToDecimal(row.Cells["PrecioVenta"].Value.ToString());
+                        lblGanancias.Text = "$" + total;
                     }
-                    lblGanancias.Text = "$" + total.ToString("0.00");
                 }
-                else
-                {
-                    lblGanancias.Text = "$0";
-                }
+
+                
             }
             catch (Exception ex)
             {
@@ -43,8 +41,7 @@ namespace Presentacion
         }
 
         public void LLenarDatos()
-        {
-            Calcular();
+        {      
 
             txtIdGanado.Text = "0";
             txtIndice.Text = "-1";
@@ -73,6 +70,7 @@ namespace Presentacion
                 g.Sexo, g.Peso, g.MesesRecuperacion, g.PrecioVenta, g.PrecioCompra, g.PesoVenta,
                     g.FechaRegistro, g.Estado == true ? "Disponible" : "Vendido", g.Estado == true ? 1 : 0 });
             }
+            Calcular();
         }
 
         private void RegistrarGanado()
@@ -281,7 +279,7 @@ namespace Presentacion
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message, "",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

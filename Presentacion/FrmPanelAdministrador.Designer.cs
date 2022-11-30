@@ -70,8 +70,8 @@
             this.Estadisticas = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.estad = new System.Windows.Forms.TabPage();
-            this.label11 = new System.Windows.Forms.Label();
             this.lblGanancias = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaGanados)).BeginInit();
             this.Estadisticas.SuspendLayout();
@@ -535,6 +535,15 @@
             this.estad.Text = "Estadisticas";
             this.estad.UseVisualStyleBackColor = true;
             // 
+            // lblGanancias
+            // 
+            this.lblGanancias.AutoSize = true;
+            this.lblGanancias.Location = new System.Drawing.Point(20, 49);
+            this.lblGanancias.Name = "lblGanancias";
+            this.lblGanancias.Size = new System.Drawing.Size(35, 18);
+            this.lblGanancias.TabIndex = 1;
+            this.lblGanancias.Text = "- - - ";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -544,15 +553,6 @@
             this.label11.Size = new System.Drawing.Size(152, 32);
             this.label11.TabIndex = 0;
             this.label11.Text = "Ganancias:";
-            // 
-            // lblGanancias
-            // 
-            this.lblGanancias.AutoSize = true;
-            this.lblGanancias.Location = new System.Drawing.Point(20, 49);
-            this.lblGanancias.Name = "lblGanancias";
-            this.lblGanancias.Size = new System.Drawing.Size(59, 18);
-            this.lblGanancias.TabIndex = 1;
-            this.lblGanancias.Text = "label12";
             // 
             // FrmPanelAdministrador
             // 
