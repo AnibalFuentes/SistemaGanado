@@ -47,7 +47,7 @@ namespace Presentacion
             {
                 decimal total = 0;
 
-                if (DatosGanados.Rows.Count > 0)
+                if (DatosCarrito.Rows.Count > 0)
                 {
                     foreach (DataGridViewRow row in DatosCarrito.Rows)
                     {
