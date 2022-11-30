@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmPanelAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPanelAdministrador.Designer.cs">
+      <DependentUpon>FrmPanelAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPanelClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPanelClientes.Designer.cs">
+      <DependentUpon>FrmPanelClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FromLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmPanelAdministrador.resx">
+      <DependentUpon>FrmPanelAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPanelClientes.resx">
+      <DependentUpon>FrmPanelClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FromLogin.resx">
       <DependentUpon>FromLogin.cs</DependentUpon>
     </EmbeddedResource>

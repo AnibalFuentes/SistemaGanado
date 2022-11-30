@@ -44,13 +44,15 @@ namespace Presentacion
                             if (usuario.TipoUsuario == "Administrador")
                             {
                                 this.Hide();
-                                MessageBox.Show("El viejo es admin");
+                                FrmPanelAdministrador panelAdministrador = new FrmPanelAdministrador();
+                                panelAdministrador.Show();
 
                             }
-                            if (usuario.TipoUsuario == "Empleado")
+                            if (usuario.TipoUsuario == "Cliente")
                             {
                                 this.Hide();
-                                MessageBox.Show("El viejo es empleado");
+                                FrmPanelClientes panelCliente = new FrmPanelClientes();
+                                panelCliente.Show();
                             }
                         }
                     }
