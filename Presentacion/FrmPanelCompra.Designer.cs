@@ -52,7 +52,6 @@
             this.txtSexo = new System.Windows.Forms.TextBox();
             this.txtRaza = new System.Windows.Forms.TextBox();
             this.txtReferencia = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTotalPagar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,6 +63,7 @@
             this.Peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.referencia = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatosGanados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DatosCarrito)).BeginInit();
@@ -73,7 +73,7 @@
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(539, 33);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(66, 18);
@@ -84,7 +84,7 @@
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(262, 32);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(92, 18);
@@ -95,7 +95,7 @@
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(9, 30);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(68, 18);
@@ -105,7 +105,7 @@
             // TxNombreUsuario
             // 
             this.TxNombreUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxNombreUsuario.BackColor = System.Drawing.Color.White;
+            this.TxNombreUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(0)))));
             this.TxNombreUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxNombreUsuario.ForeColor = System.Drawing.Color.Black;
             this.TxNombreUsuario.Location = new System.Drawing.Point(610, 28);
@@ -119,7 +119,7 @@
             // TxDocumentoCliente
             // 
             this.TxDocumentoCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxDocumentoCliente.BackColor = System.Drawing.Color.White;
+            this.TxDocumentoCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(0)))));
             this.TxDocumentoCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxDocumentoCliente.ForeColor = System.Drawing.Color.Black;
             this.TxDocumentoCliente.Location = new System.Drawing.Point(357, 28);
@@ -133,7 +133,7 @@
             // TxNomCliente
             // 
             this.TxNomCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxNomCliente.BackColor = System.Drawing.Color.White;
+            this.TxNomCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(0)))));
             this.TxNomCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxNomCliente.ForeColor = System.Drawing.Color.Black;
             this.TxNomCliente.Location = new System.Drawing.Point(82, 26);
@@ -153,6 +153,7 @@
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.TxNombreUsuario);
             this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(811, 66);
@@ -163,7 +164,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(9, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 18);
@@ -179,7 +180,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DatosGanados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DatosGanados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DatosGanados.BackgroundColor = System.Drawing.Color.Silver;
+            this.DatosGanados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(0)))));
             this.DatosGanados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.DatosGanados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DatosGanados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -189,7 +190,7 @@
             this._Peso,
             this._PrecioVenta});
             this.DatosGanados.EnableHeadersVisualStyles = false;
-            this.DatosGanados.GridColor = System.Drawing.Color.DimGray;
+            this.DatosGanados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(54)))), ((int)(((byte)(1)))));
             this.DatosGanados.Location = new System.Drawing.Point(12, 110);
             this.DatosGanados.Margin = new System.Windows.Forms.Padding(4);
             this.DatosGanados.Name = "DatosGanados";
@@ -235,7 +236,7 @@
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(583, 258);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 18);
@@ -246,7 +247,7 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(462, 258);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 18);
@@ -257,7 +258,7 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(342, 258);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 18);
@@ -268,7 +269,7 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(144, 258);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 18);
@@ -279,7 +280,7 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(23, 258);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 18);
@@ -289,7 +290,7 @@
             // txtPrecioVenta
             // 
             this.txtPrecioVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtPrecioVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtPrecioVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(0)))));
             this.txtPrecioVenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPrecioVenta.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecioVenta.ForeColor = System.Drawing.Color.Black;
@@ -303,7 +304,7 @@
             // txtPeso
             // 
             this.txtPeso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtPeso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtPeso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(0)))));
             this.txtPeso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPeso.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPeso.ForeColor = System.Drawing.Color.Black;
@@ -317,7 +318,7 @@
             // txtSexo
             // 
             this.txtSexo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtSexo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtSexo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(0)))));
             this.txtSexo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSexo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSexo.ForeColor = System.Drawing.Color.Black;
@@ -331,7 +332,7 @@
             // txtRaza
             // 
             this.txtRaza.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtRaza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtRaza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(0)))));
             this.txtRaza.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRaza.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRaza.ForeColor = System.Drawing.Color.Black;
@@ -345,7 +346,7 @@
             // txtReferencia
             // 
             this.txtReferencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtReferencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtReferencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(0)))));
             this.txtReferencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtReferencia.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReferencia.ForeColor = System.Drawing.Color.Black;
@@ -355,23 +356,6 @@
             this.txtReferencia.ReadOnly = true;
             this.txtReferencia.Size = new System.Drawing.Size(112, 26);
             this.txtReferencia.TabIndex = 38;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(732, 258);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(139, 48);
-            this.button2.TabIndex = 37;
-            this.button2.Text = "Agregar al carrito";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label3
             // 
@@ -436,7 +420,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DatosCarrito.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DatosCarrito.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DatosCarrito.BackgroundColor = System.Drawing.Color.Silver;
+            this.DatosCarrito.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(0)))));
             this.DatosCarrito.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.DatosCarrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DatosCarrito.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -446,7 +430,7 @@
             this.Peso,
             this.PrecioVenta});
             this.DatosCarrito.EnableHeadersVisualStyles = false;
-            this.DatosCarrito.GridColor = System.Drawing.Color.DimGray;
+            this.DatosCarrito.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(54)))), ((int)(((byte)(1)))));
             this.DatosCarrito.Location = new System.Drawing.Point(12, 338);
             this.DatosCarrito.Margin = new System.Windows.Forms.Padding(4);
             this.DatosCarrito.Name = "DatosCarrito";
@@ -499,12 +483,33 @@
             this.referencia.ReadOnly = true;
             this.referencia.Size = new System.Drawing.Size(56, 26);
             this.referencia.TabIndex = 53;
+            this.referencia.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.Orange;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = global::Presentacion.Properties.Resources.carrito_de_compras__1_;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(732, 258);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(139, 48);
+            this.button2.TabIndex = 37;
+            this.button2.Text = "Agregar al carrito";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FrmPanelCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(54)))), ((int)(((byte)(1)))));
             this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.referencia);
             this.Controls.Add(this.label3);
@@ -527,10 +532,12 @@
             this.Controls.Add(this.DatosGanados);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Arial", 12F);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmPanelCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel de compras";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPanelCompra_FormClosing);
             this.Load += new System.EventHandler(this.FrmPanelCompra_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -290,38 +290,43 @@ namespace Presentacion
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (txtConsultar.Text != "")
-            {
-                //Tabla
-                GrillaGanados.CurrentCell = null;
+            //if (txtConsultar.Text != "")
+            //{
+            //    //Tabla
+            //    GrillaGanados.CurrentCell = null;
 
-                foreach (DataGridViewRow row in GrillaGanados.Rows) { row.Visible = false; }
+            //    foreach (DataGridViewRow row in GrillaGanados.Rows) { row.Visible = false; }
 
-                foreach (DataGridViewRow row in GrillaGanados.Rows)
-                {
-                    foreach (DataGridViewCell cell in row.Cells)
-                    {
-                        if ((cell.Value.ToString().ToUpperInvariant().IndexOf(txtConsultar.Text.ToUpperInvariant()) == 0))
-                        {
-                            row.Visible = true;
-                            break;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                foreach (DataGridViewRow row in GrillaGanados.Rows)
-                {
-                    foreach (DataGridViewCell cell in row.Cells)
-                    {
-                        row.Visible = true;
-                    }
-                }
-            }
+            //    foreach (DataGridViewRow row in GrillaGanados.Rows)
+            //    {
+            //        foreach (DataGridViewCell cell in row.Cells)
+            //        {
+            //            if ((cell.Value.ToString().ToUpperInvariant().IndexOf(txtConsultar.Text.ToUpperInvariant()) == 0))
+            //            {
+            //                row.Visible = true;
+            //                break;
+            //            }
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    foreach (DataGridViewRow row in GrillaGanados.Rows)
+            //    {
+            //        foreach (DataGridViewCell cell in row.Cells)
+            //        {
+            //            row.Visible = true;
+            //        }
+            //    }
+            //}
+        }
+       
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        private void txtConsultar_TextChanged(object sender, EventArgs e)
         {
 
         }
